@@ -1,6 +1,4 @@
 var mongoose = require("mongoose");
-
-
 var campgroundScheme = new mongoose.Schema({
    name : String,
    img : String,
