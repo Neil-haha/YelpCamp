@@ -1,0 +1,25 @@
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+#delete-form {
+    display:inline;
+}
+
+body {
+    background-image: url(http://i.imgur.com/K3mPv14.jpg);
+    background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#show_goback_button {
+    text-align: center;
+}
