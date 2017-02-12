@@ -23,14 +23,20 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
            console.log(err);
            res.redirect("/campgrounds");
        } else {
-           Comment.create(req.body.comment, function(err, comment) {
+           var text = req.body.text;
+           var date = new Date();
+           var author = {id: req.user._id, username: req.user.username};
+           var newComment = {text : text, date: date, author: author};
+           
+           console.log(newComment);
+           Comment.create(newComment, function(err, comment) {
                if(err) {
                    req.flash("error", "Something went wrong");
                    console.log(err);
                } else {
                    //add username and id to comment
-                   comment.author.id = req.user._id;
-                   comment.author.username = req.user.username;
+                //   comment.author.id = req.user._id;
+                //   comment.author.username = req.user.username;
                    //comment.date = new Date();
                    //save comment
                    comment.save();
